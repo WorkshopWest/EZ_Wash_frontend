@@ -1,47 +1,44 @@
-<table mat-table [dataSource]="data" class="full-width-table" matSort aria-label="Elements">
+<table mat-table [dataSource]="data" class="full-width-table" aria-label="Elements">
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
       <mat-checkbox [checked]="selection.hasValue() && isAllSelected()"
                     [indeterminate]="selection.hasValue() && !isAllSelected()"
                     (change)="toggleAll()">
-
-
       </mat-checkbox>
     </th>
     <td mat-cell *matCellDef="let row" (click)="$event.stopPropagation()">
       <mat-checkbox (change)="onOrderToggled(row)" [checked]="selection.isSelected(row)">
-
       </mat-checkbox>
     </td>
   </ng-container>
 
   <!-- Id Column -->
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+    <th mat-header-cell *matHeaderCellDef>Id</th>
     <td mat-cell *matCellDef="let row">{{row.id}}</td>
   </ng-container>
 
   <!-- customer Column -->
   <ng-container matColumnDef="customer">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer</th>
-    <td mat-cell *matCellDef="let row">{{row.customer}}</td>
+    <th mat-header-cell *matHeaderCellDef>Customer</th>
+    <td mat-cell *matCellDef="let row">{{row["customer"]}}</td>
   </ng-container>
 
   <!-- orderWeight Column -->
   <ng-container matColumnDef="orderWeight">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Weight</th>
+    <th mat-header-cell *matHeaderCellDef>Weight</th>
     <td mat-cell *matCellDef="let row">{{row["orderWeight"]}}</td>
   </ng-container>
 
   <!-- collectionTime Column -->
   <ng-container matColumnDef="collectionTime">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Collection Time</th>
+    <th mat-header-cell *matHeaderCellDef>Collection Time</th>
     <td mat-cell *matCellDef="let row">{{row["collectionTime"]}}</td>
   </ng-container>
 
   <!-- orderStatus Column -->
   <ng-container matColumnDef="orderStatus">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+    <th mat-header-cell *matHeaderCellDef>Status</th>
     <td mat-cell *matCellDef="let row">{{row["orderStatus"]}}</td>
   </ng-container>
 

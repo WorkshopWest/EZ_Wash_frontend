@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderTableItem} from "./order-table/order-table-datasource";
 import {OrderService} from "./order.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {SelectionModel} from "@angular/cdk/collections";
 import {FormBuilder, Validators} from "@angular/forms";
+import {OrderTableItem} from "./orderTableItem";
 
 @Component({
   selector: 'app-root',
